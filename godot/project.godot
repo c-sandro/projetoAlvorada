@@ -11,5 +11,5 @@ config_version=5
 [application]
 
 config/name="Projeto Alvorada"
-run/main_scene="res://main_world.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")

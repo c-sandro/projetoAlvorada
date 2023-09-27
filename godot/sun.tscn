@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8augt8na75pj"]
+[gd_scene load_steps=3 format=3 uid="uid://c8augt8na75pj"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yvphv"]
-radius = 319.0
-height = 904.0
+[ext_resource type="Script" path="res://scripts/Sun.gd" id="1_on042"]
 
-[node name="sun" type="RigidBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cq0rq"]
+radius = 50.0
+height = 180.0
+
+[node name="Sun" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_on042")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_yvphv")
+shape = SubResource("CapsuleShape2D_cq0rq")
+debug_color = Color(0.709804, 0.486275, 0, 0.419608)
