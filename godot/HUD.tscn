@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bikyg3dc6rmqf"]
+[gd_scene load_steps=4 format=3 uid="uid://bikyg3dc6rmqf"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_iqnn1"]
+
+[sub_resource type="Gradient" id="Gradient_etd4f"]
+offsets = PackedFloat32Array(0.670968)
+colors = PackedColorArray(0.411765, 0.2, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ewnsa"]
+gradient = SubResource("Gradient_etd4f")
+width = 250
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_iqnn1")
@@ -12,3 +20,15 @@ offset_right = 80.0
 offset_bottom = 132.0
 theme_override_font_sizes/font_size = 100
 text = "0"
+
+[node name="MouseUpgrade" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 120.0
+offset_right = 240.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 25
+text = "Melhorar o mouse"
+icon = SubResource("GradientTexture2D_ewnsa")
+flat = true
+clip_text = true
+icon_alignment = 1

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcavmedvv7ixd"]
+[gd_scene load_steps=5 format=3 uid="uid://bcavmedvv7ixd"]
 
 [ext_resource type="PackedScene" uid="uid://c8augt8na75pj" path="res://Sun.tscn" id="1_3evlm"]
 [ext_resource type="PackedScene" uid="uid://bikyg3dc6rmqf" path="res://HUD.tscn" id="1_akrkt"]
+[ext_resource type="Script" path="res://scripts/SunEnergyManager.gd" id="2_y5alj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0hwuq"]
 
@@ -11,8 +12,11 @@ position = Vector2(10, 10)
 
 [node name="HUD" parent="." instance=ExtResource("1_akrkt")]
 
+[node name="SunEnergyManager" type="Node" parent="."]
+script = ExtResource("2_y5alj")
+
 [node name="Sun" parent="." instance=ExtResource("1_3evlm")]
 position = Vector2(731, 400)
 
-[connection signal="mouse_entered" from="Sun" to="HUD" method="_on_sun_mouse_entered"]
-[connection signal="mouse_exited" from="Sun" to="HUD" method="_on_sun_mouse_exited"]
+[connection signal="mouse_entered" from="Sun" to="SunEnergyManager" method="_on_sun_mouse_entered"]
+[connection signal="mouse_exited" from="Sun" to="SunEnergyManager" method="_on_sun_mouse_exited"]
