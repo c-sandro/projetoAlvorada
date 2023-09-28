@@ -1,17 +1,118 @@
-[gd_scene load_steps=4 format=3 uid="uid://bikyg3dc6rmqf"]
+[gd_scene load_steps=6 format=3 uid="uid://bikyg3dc6rmqf"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_iqnn1"]
 
 [sub_resource type="Gradient" id="Gradient_etd4f"]
-offsets = PackedFloat32Array(0.670968)
-colors = PackedColorArray(0.411765, 0.2, 0, 1)
+offsets = PackedFloat32Array(0.432258)
+colors = PackedColorArray(0.333333, 0.12549, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ewnsa"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_61edw"]
 gradient = SubResource("Gradient_etd4f")
-width = 250
+width = 350
+
+[sub_resource type="Gradient" id="Gradient_qoo1j"]
+offsets = PackedFloat32Array(0.470968)
+colors = PackedColorArray(0.333333, 0.12549, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3k8q2"]
+gradient = SubResource("Gradient_qoo1j")
+width = 200
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_iqnn1")
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame" type="Control" parent="Menu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RightRect" type="ColorRect" parent="Menu/Frame"]
+offset_left = 1136.0
+offset_top = 16.0
+offset_right = 1152.0
+offset_bottom = 632.0
+color = Color(0.411765, 0.2, 0, 1)
+
+[node name="UpRect" type="ColorRect" parent="Menu/Frame"]
+offset_left = 376.0
+offset_right = 1152.0
+offset_bottom = 16.0
+color = Color(0.411765, 0.2, 0, 1)
+
+[node name="DownRect" type="ColorRect" parent="Menu/Frame"]
+offset_left = 376.0
+offset_top = 632.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.411765, 0.2, 0, 1)
+
+[node name="LeftRect" type="ColorRect" parent="Menu/Frame"]
+offset_right = 376.0
+offset_bottom = 648.0
+color = Color(0.411765, 0.2, 0, 1)
+
+[node name="MouseUpgrade" type="Button" parent="Menu"]
+offset_left = 8.0
+offset_top = 120.0
+offset_right = 366.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 25
+text = "  Melhorar o mouse"
+icon = SubResource("GradientTexture2D_61edw")
+flat = true
+alignment = 0
+icon_alignment = 1
+
+[node name="Price" type="Label" parent="Menu/MouseUpgrade"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 16.0
+offset_right = 336.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 30
+text = "10"
+horizontal_alignment = 2
+
+[node name="BuildingBuy" type="Button" parent="Menu"]
+offset_left = 8.0
+offset_top = 200.0
+offset_right = 366.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 25
+text = "  Comprar construção"
+icon = SubResource("GradientTexture2D_61edw")
+flat = true
+alignment = 0
+icon_alignment = 1
+
+[node name="Price" type="Label" parent="Menu/BuildingBuy"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 16.0
+offset_right = 336.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 30
+text = "50"
+horizontal_alignment = 2
+
+[node name="CloseMenu" type="Button" parent="Menu"]
+offset_left = 16.0
+offset_top = 560.0
+offset_right = 224.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 30
+text = "Fechar Menu"
+icon = SubResource("GradientTexture2D_3k8q2")
+flat = true
+clip_text = true
+icon_alignment = 1
 
 [node name="SunCount" type="Label" parent="."]
 offset_left = 16.0
@@ -21,14 +122,19 @@ offset_bottom = 132.0
 theme_override_font_sizes/font_size = 100
 text = "0"
 
-[node name="MouseUpgrade" type="Button" parent="."]
-offset_left = 8.0
-offset_top = 120.0
-offset_right = 240.0
-offset_bottom = 192.0
-theme_override_font_sizes/font_size = 25
-text = "Melhorar o mouse"
-icon = SubResource("GradientTexture2D_ewnsa")
+[node name="OpenMenu" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 560.0
+offset_right = 224.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 30
+text = "Abrir Menu"
+icon = SubResource("GradientTexture2D_3k8q2")
 flat = true
 clip_text = true
 icon_alignment = 1
+
+[connection signal="button_down" from="Menu/MouseUpgrade" to="." method="_on_mouse_upgrade_button_down"]
+[connection signal="button_down" from="Menu/BuildingBuy" to="." method="_on_building_buy_button_down"]
+[connection signal="button_down" from="Menu/CloseMenu" to="." method="_on_close_menu_button_down"]
+[connection signal="button_down" from="OpenMenu" to="." method="_on_open_menu_button_down"]
