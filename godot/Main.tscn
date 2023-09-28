@@ -13,7 +13,6 @@ position = Vector2(10, 10)
 
 [node name="Sun" parent="." instance=ExtResource("1_3evlm")]
 position = Vector2(731, 400)
-sunSpeed = 100
 
 [connection signal="mouse_entered" from="Sun" to="HUD" method="_on_sun_mouse_entered"]
 [connection signal="mouse_exited" from="Sun" to="HUD" method="_on_sun_mouse_exited"]

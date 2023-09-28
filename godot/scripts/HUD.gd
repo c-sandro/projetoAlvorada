@@ -1,11 +1,9 @@
 extends CanvasLayer
 
-
 var sunTime: float = 0
-@export var sunTimeRequired: int = 0
+@export var sunTimeRequired: int = 1
 
 var isMouseInSun: bool = false
-
 
 func _process(delta):
 	if(isMouseInSun):
