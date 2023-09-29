@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcavmedvv7ixd"]
 
-[ext_resource type="PackedScene" uid="uid://c8augt8na75pj" path="res://Sun.tscn" id="1_3evlm"]
+[ext_resource type="PackedScene" uid="uid://c8augt8na75pj" path="res://sun.tscn" id="1_3evlm"]
 [ext_resource type="PackedScene" uid="uid://bikyg3dc6rmqf" path="res://HUD.tscn" id="1_akrkt"]
 [ext_resource type="Script" path="res://scripts/SunEnergyManager.gd" id="2_y5alj"]
 
@@ -18,6 +18,8 @@ script = ExtResource("2_y5alj")
 [node name="BuildingTimer" type="Timer" parent="SunEnergyManager"]
 wait_time = 10.0
 
+[node name="SunTimer" type="Timer" parent="SunEnergyManager"]
+
 [node name="Sun" parent="." instance=ExtResource("1_3evlm")]
 position = Vector2(731, 400)
 
@@ -26,5 +28,6 @@ position = Vector2(731, 400)
 [connection signal="sunTick" from="SunEnergyManager" to="HUD" method="_on_sun_energy_manager_sun_tick"]
 [connection signal="upgradeBought" from="SunEnergyManager" to="HUD" method="_on_sun_energy_manager_upgrade_bought"]
 [connection signal="timeout" from="SunEnergyManager/BuildingTimer" to="SunEnergyManager" method="_on_building_timer_timeout"]
+[connection signal="timeout" from="SunEnergyManager/SunTimer" to="SunEnergyManager" method="_on_sun_timer_timeout"]
 [connection signal="mouse_entered" from="Sun" to="SunEnergyManager" method="_on_sun_mouse_entered"]
 [connection signal="mouse_exited" from="Sun" to="SunEnergyManager" method="_on_sun_mouse_exited"]
