@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcspjthu713gd"]
+
+[ext_resource type="Script" path="res://scripts/SunEnergyManager.gd" id="1_jyu1x"]
+[ext_resource type="PackedScene" uid="uid://bymkq2y7t28ek" path="res://Building.tscn" id="2_701bd"]
+
+[node name="SunEnergyManager" type="Node"]
+script = ExtResource("1_jyu1x")
+
+[node name="SunTimer" type="Timer" parent="."]
+
+[node name="Building" parent="." instance=ExtResource("2_701bd")]
+
+[connection signal="timeout" from="SunTimer" to="." method="_on_sun_timer_timeout"]

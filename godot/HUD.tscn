@@ -22,6 +22,7 @@ width = 200
 script = ExtResource("1_iqnn1")
 
 [node name="Menu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -57,7 +58,7 @@ color = Color(0.411765, 0.2, 0, 1)
 
 [node name="LeftRect" type="ColorRect" parent="Menu/Frame"]
 layout_mode = 0
-offset_right = 376.0
+offset_right = 392.0
 offset_bottom = 648.0
 color = Color(0.411765, 0.2, 0, 1)
 
@@ -128,6 +129,7 @@ theme_override_font_sizes/font_size = 75
 text = "0"
 
 [node name="Text" type="Label" parent="SunCount"]
+layout_mode = 0
 offset_left = -160.0
 offset_right = -2.0
 offset_bottom = 106.0
@@ -140,9 +142,10 @@ offset_top = 88.0
 offset_right = 288.0
 offset_bottom = 146.0
 theme_override_font_sizes/font_size = 40
-text = "0"
+text = "1"
 
 [node name="Text" type="Label" parent="SunPerTick"]
+layout_mode = 0
 offset_left = -248.0
 offset_right = -3.0
 offset_bottom = 58.0
@@ -158,6 +161,7 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 
 [node name="Text" type="Label" parent="SunPerSecond"]
+layout_mode = 0
 offset_left = -312.0
 offset_right = -5.0
 offset_bottom = 58.0
