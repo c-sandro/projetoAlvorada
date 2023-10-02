@@ -8,6 +8,7 @@ script = ExtResource("1_jyu1x")
 
 [node name="SunTimer" type="Timer" parent="."]
 
-[node name="Building" parent="." instance=ExtResource("2_701bd")]
+[node name="WindPowerTimer" parent="." instance=ExtResource("2_701bd")]
 
 [connection signal="timeout" from="SunTimer" to="." method="_on_sun_timer_timeout"]
+[connection signal="timeout" from="WindPowerTimer" to="." method="_on_wind_power_timer_timeout"]
