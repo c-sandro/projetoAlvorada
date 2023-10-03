@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwbar086b16s3"]
+
+[ext_resource type="Script" path="res://scripts/BuildingsManager.gd" id="1_xvyfi"]
+[ext_resource type="Script" path="res://classes/Building.gd" id="2_cp4ie"]
+[ext_resource type="PackedScene" uid="uid://drnybysl67mw5" path="res://classes/ScreenBuilding.tscn" id="2_exgfd"]
+
+[node name="BuildingsManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("1_xvyfi")
+
+[node name="WindPower" type="Node" parent="."]
+
+[node name="WindPowerPlant" parent="WindPower" node_paths=PackedStringArray("buildingTimer") instance=ExtResource("2_exgfd")]
+offset_left = 448.0
+offset_top = 400.0
+offset_right = -680.0
+offset_bottom = -176.0
+color = Color(0.796078, 0.796078, 0.796078, 1)
+buildingTimer = NodePath("../WindPowerTimer")
+
+[node name="WindPowerTimer" type="Timer" parent="WindPower"]
+script = ExtResource("2_cp4ie")
+
+[connection signal="timeout" from="WindPower/WindPowerTimer" to="." method="_on_wind_power_timer_timeout"]

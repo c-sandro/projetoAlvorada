@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bikyg3dc6rmqf"]
+[gd_scene load_steps=4 format=3 uid="uid://c65tpy6cg0s5n"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_iqnn1"]
 
@@ -6,106 +6,137 @@
 offsets = PackedFloat32Array(0.470968)
 colors = PackedColorArray(0.333333, 0.12549, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3k8q2"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pw30r"]
 gradient = SubResource("Gradient_qoo1j")
 width = 200
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_iqnn1")
 
 [node name="Menu" type="Control" parent="."]
 visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Frame" type="Control" parent="Menu"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RightRect" type="ColorRect" parent="Menu/Frame"]
-layout_mode = 0
-offset_left = 1136.0
-offset_top = 16.0
-offset_right = 1152.0
-offset_bottom = 632.0
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+grow_horizontal = 0
+grow_vertical = 2
 color = Color(0.411765, 0.2, 0, 1)
 
 [node name="UpRect" type="ColorRect" parent="Menu/Frame"]
-layout_mode = 0
-offset_left = 376.0
-offset_right = 1152.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
 offset_bottom = 16.0
+grow_horizontal = 2
 color = Color(0.411765, 0.2, 0, 1)
 
 [node name="DownRect" type="ColorRect" parent="Menu/Frame"]
-layout_mode = 0
-offset_left = 376.0
-offset_top = 632.0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
 color = Color(0.411765, 0.2, 0, 1)
 
 [node name="LeftRect" type="ColorRect" parent="Menu/Frame"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
 offset_right = 392.0
-offset_bottom = 648.0
+grow_vertical = 2
 color = Color(0.411765, 0.2, 0, 1)
 
 [node name="CloseMenu" type="Button" parent="Menu"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = 560.0
+offset_top = -88.0
 offset_right = 224.0
-offset_bottom = 632.0
+offset_bottom = -16.0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Fechar Menu"
-icon = SubResource("GradientTexture2D_3k8q2")
+icon = SubResource("GradientTexture2D_pw30r")
 flat = true
 clip_text = true
 icon_alignment = 1
 
+[node name="SunPerTick" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 273.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="Text" type="Label" parent="Menu/SunPerTick"]
+layout_mode = 0
+offset_left = -239.0
+offset_right = -5.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 30
+text = "Energia por tick:"
+
 [node name="SunCount" type="Label" parent="."]
-offset_left = 176.0
-offset_right = 219.0
-offset_bottom = 106.0
-theme_override_font_sizes/font_size = 75
+layout_mode = 0
+offset_left = 216.0
+offset_right = 245.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 50
 text = "0"
 
 [node name="Text" type="Label" parent="SunCount"]
 layout_mode = 0
-offset_left = -160.0
-offset_right = -2.0
-offset_bottom = 106.0
-theme_override_font_sizes/font_size = 75
-text = "Sun:"
-
-[node name="SunPerTick" type="Label" parent="."]
-offset_left = 264.0
-offset_top = 88.0
-offset_right = 288.0
-offset_bottom = 146.0
-theme_override_font_sizes/font_size = 40
-text = "1"
-
-[node name="Text" type="Label" parent="SunPerTick"]
-layout_mode = 0
-offset_left = -248.0
-offset_right = -3.0
-offset_bottom = 58.0
-theme_override_font_sizes/font_size = 40
-text = "Sun per Tick:"
+offset_left = -200.0
+offset_right = -4.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 50
+text = "Energia:"
 
 [node name="OpenMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = 560.0
+offset_top = -88.0
 offset_right = 224.0
-offset_bottom = 632.0
+offset_bottom = -16.0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Abrir Menu"
-icon = SubResource("GradientTexture2D_3k8q2")
+icon = SubResource("GradientTexture2D_pw30r")
 flat = true
 clip_text = true
 icon_alignment = 1

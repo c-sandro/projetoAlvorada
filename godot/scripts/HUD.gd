@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 #funções de abrir e fechar o menu
 func _on_open_menu_button_down():
@@ -16,11 +16,12 @@ func _on_sun_energy_manager_sun_tick(newSunAmount):
 	$SunCount.text = str(newSunAmount)
 
 func _on_sun_energy_manager_mouse_bought(newPrice, newSPT):
-	$Menu/MouseUpgrade/Price.text = str(newPrice)
-	$SunPerTick.text = str(newSPT)
+	$Buttons/MouseUpgrade/Price.text = str(newPrice)
+	$Menu/SunPerTick.text = str(newSPT)
 
-func _on_sun_energy_manager_building_bought(upgrade, newPrice, newSPS):
-	if(upgrade == 0):
-		$Menu/BuildingBuy/Price.text = str(newPrice)
-	$SunPerSecond.text = str(newSPS)
-	
+func _on_sun_energy_manager_building_bought(building, newPrice):
+	if(building == 0):
+		$Buttons/WindPowerBuy/Price.text = str(newPrice)
+
+func _on_sun_time_elapsed(dayTime):
+	$Time.text = str(dayTime) + ":00"

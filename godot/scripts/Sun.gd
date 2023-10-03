@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @export var sunSpeed: int = 100
 var screenSize = Vector2.ZERO
+var dayTime: int = 6
+
+signal timeElapsed
 
 func _ready():
 	#deixa o sol "clicavel"
@@ -14,7 +17,7 @@ func _ready():
 	
 	screenSize = get_viewport_rect().size
 	
-func _process(delta):
+func _process(_delta):
 	
 	#método pra fazer o sol quicar nas bordas
 	if(position.x >= screenSize.x || position.x <= 0):
@@ -24,3 +27,15 @@ func _process(delta):
 		
 	#função pro sol mover
 	move_and_slide()
+
+
+func _on_day_cycle_timeout():
+	dayTime += 1
+	if(dayTime == 18):
+		self.visible = false
+	elif(dayTime == 24):
+		dayTime = 0
+	elif(dayTime == 6):
+		self.visible = true
+		
+	timeElapsed.emit(dayTime)

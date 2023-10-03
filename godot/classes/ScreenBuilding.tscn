@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://drnybysl67mw5"]
+
+[ext_resource type="Script" path="res://classes/ScreenBuilding.gd" id="1_y1gxy"]
+
+[node name="PowerPlant" type="ColorRect"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y1gxy")
+
+[node name="ProgressBar" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -9.637
+anchor_top = -14.628
+anchor_right = 19.163
+anchor_bottom = 1.572
+offset_left = 441.48
+offset_top = 545.12
+offset_right = -682.52
+offset_bottom = -2.88
+mouse_filter = 2
+color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="HowFull" type="ColorRect" parent="ProgressBar"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = -38.0
+offset_right = 82.0
+offset_bottom = 58.0
+rotation = 3.14159
+pivot_offset = Vector2(12, 48)
+mouse_filter = 2
+color = Color(0.341176, 0.490196, 0, 1)
+
+[node name="InfoWindow" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="InfoWindow"]
+layout_mode = 0
+offset_left = -176.0
+offset_top = -24.0
+offset_right = -24.0
+offset_bottom = 51.0
+mouse_filter = 2
+color = Color(0.411765, 0.2, 0, 1)
+
+[node name="Text" type="Label" parent="InfoWindow"]
+layout_mode = 0
+offset_left = -172.0
+offset_top = -24.0
+offset_right = -57.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 15
+text = "Ganho por tick: 
+Tempo de tick: 
+Quantidade: "
+
+[node name="GainPerTick" type="Label" parent="InfoWindow/Text"]
+offset_left = 116.0
+offset_right = 125.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 15
+text = "0"
+
+[node name="TickTime" type="Label" parent="InfoWindow/Text"]
+offset_left = 111.0
+offset_top = 25.0
+offset_right = 120.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 15
+text = "0
+"
+
+[node name="Quantity" type="Label" parent="InfoWindow/Text"]
+offset_left = 95.0
+offset_top = 50.0
+offset_right = 104.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 15
+text = "0"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
