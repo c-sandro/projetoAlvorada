@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bcavmedvv7ixd"]
 
-[ext_resource type="PackedScene" uid="uid://c8augt8na75pj" path="res://Sun.tscn" id="1_3evlm"]
+[ext_resource type="PackedScene" uid="uid://c8augt8na75pj" path="res://sun.tscn" id="1_3evlm"]
 [ext_resource type="PackedScene" uid="uid://c65tpy6cg0s5n" path="res://HUD.tscn" id="1_akrkt"]
 [ext_resource type="Script" path="res://scripts/MouseBar.gd" id="2_7purf"]
 [ext_resource type="PackedScene" uid="uid://bwbar086b16s3" path="res://BuildingsManager.tscn" id="3_1oy0q"]
@@ -131,14 +131,15 @@ theme_override_font_sizes/font_size = 40
 text = "6:00"
 horizontal_alignment = 2
 
-[node name="BuildingsManager" parent="." instance=ExtResource("3_1oy0q")]
+[node name="BuildingsManager" parent="." node_paths=PackedStringArray("sunEnergyManager") instance=ExtResource("3_1oy0q")]
+sunEnergyManager = NodePath("../SunEnergyManager")
 
 [node name="Sun" parent="." instance=ExtResource("1_3evlm")]
 position = Vector2(731, 400)
 
 [node name="SunEnergyManager" type="Node" parent="."]
 script = ExtResource("5_khmhj")
-sunTotal = 100
+sunTotal = 100000
 
 [node name="SunTimer" type="Timer" parent="SunEnergyManager"]
 

@@ -3,6 +3,7 @@ extends Node
 @export var sunTotal: int = 0
 var sunGainedPerTick: int = 1
 var mouseCost: int = 10
+var mouseUpgrades: int = 0
 
 signal sunTick
 signal mouseBought
@@ -34,9 +35,10 @@ func _on_mouse_upgrade_button_down():
 	if(sunTotal < mouseCost):
 		return
 	
+	mouseUpgrades += 1
 	sunTotal -= mouseCost
 	sunGainedPerTick += 1
-	mouseCost = roundi(mouseCost * 1.5)
+	mouseCost = roundi(10 * (1.15 ** mouseUpgrades))
 	changeSunCountHUD()
 	changeMousePriceHUD()
 
