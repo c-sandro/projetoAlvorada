@@ -28,18 +28,18 @@ anchor_left = -9.637
 anchor_top = -14.628
 anchor_right = 19.163
 anchor_bottom = 1.572
-offset_left = 441.48
+offset_left = 450.48
 offset_top = 545.12
-offset_right = -682.52
+offset_right = -673.52
 offset_bottom = -2.88
 mouse_filter = 2
 color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="HowFull" type="ColorRect" parent="ProgressBar"]
 layout_mode = 0
-offset_left = 58.0
+offset_left = 67.0
 offset_top = -38.0
-offset_right = 82.0
+offset_right = 91.0
 offset_bottom = 58.0
 rotation = 3.14159
 pivot_offset = Vector2(12, 48)

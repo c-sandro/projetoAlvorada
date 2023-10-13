@@ -25,4 +25,32 @@ buildingTimer = NodePath("../WindPowerTimer")
 [node name="WindPowerTimer" type="Timer" parent="WindPower"]
 script = ExtResource("2_cp4ie")
 
+[node name="WaterPower" type="Node" parent="."]
+
+[node name="WaterPowerPlant" parent="WaterPower" node_paths=PackedStringArray("buildingTimer") instance=ExtResource("2_exgfd")]
+offset_left = 786.0
+offset_top = 244.0
+offset_right = -304.0
+offset_bottom = -363.0
+color = Color(0, 0.666667, 0.666667, 1)
+buildingTimer = NodePath("../WaterPowerTimer")
+
+[node name="WaterPowerTimer" type="Timer" parent="WaterPower"]
+script = ExtResource("2_cp4ie")
+
+[node name="NuclearPower" type="Node" parent="."]
+
+[node name="NuclearPowerPlant" parent="NuclearPower" node_paths=PackedStringArray("buildingTimer") instance=ExtResource("2_exgfd")]
+offset_left = 220.0
+offset_top = 140.0
+offset_right = -875.0
+offset_bottom = -449.0
+color = Color(0, 0.741176, 0.34902, 1)
+buildingTimer = NodePath("../NuclearPowerTimer")
+
+[node name="NuclearPowerTimer" type="Timer" parent="NuclearPower"]
+script = ExtResource("2_cp4ie")
+
 [connection signal="timeout" from="WindPower/WindPowerTimer" to="." method="_on_wind_power_timer_timeout"]
+[connection signal="timeout" from="WaterPower/WaterPowerTimer" to="." method="_on_water_power_timer_timeout"]
+[connection signal="timeout" from="NuclearPower/NuclearPowerTimer" to="." method="_on_nuclear_power_timer_timeout"]
