@@ -59,13 +59,15 @@ icon_alignment = 1
 
 [node name="Price" type="Label" parent="HUD/Buttons/MouseUpgrade"]
 layout_mode = 0
-offset_left = 321.0
-offset_top = 15.0
-offset_right = 355.0
-offset_bottom = 60.0
+offset_left = 304.0
+offset_top = 16.0
+offset_right = 392.0
+offset_bottom = 61.0
+pivot_offset = Vector2(34, 0)
 theme_override_font_sizes/font_size = 30
 text = "10"
 horizontal_alignment = 2
+text_direction = 2
 
 [node name="WindPowerBuy" type="Button" parent="HUD/Buttons"]
 layout_mode = 1
@@ -86,13 +88,14 @@ icon_alignment = 1
 
 [node name="Price" type="Label" parent="HUD/Buttons/WindPowerBuy"]
 layout_mode = 0
-offset_left = 323.0
+offset_left = 304.0
 offset_top = 16.0
-offset_right = 357.0
+offset_right = 392.0
 offset_bottom = 61.0
 theme_override_font_sizes/font_size = 30
 text = "25"
 horizontal_alignment = 2
+text_direction = 2
 
 [node name="WaterPowerBuy" type="Button" parent="HUD/Buttons"]
 layout_mode = 1
@@ -113,13 +116,14 @@ icon_alignment = 1
 
 [node name="Price" type="Label" parent="HUD/Buttons/WaterPowerBuy"]
 layout_mode = 0
-offset_left = 323.0
+offset_left = 304.0
 offset_top = 16.0
-offset_right = 357.0
+offset_right = 392.0
 offset_bottom = 61.0
 theme_override_font_sizes/font_size = 30
 text = "100"
 horizontal_alignment = 2
+text_direction = 2
 
 [node name="NuclearPowerBuy" type="Button" parent="HUD/Buttons"]
 layout_mode = 1
@@ -140,9 +144,9 @@ icon_alignment = 1
 
 [node name="Price" type="Label" parent="HUD/Buttons/NuclearPowerBuy"]
 layout_mode = 0
-offset_left = 323.0
+offset_left = 304.0
 offset_top = 16.0
-offset_right = 357.0
+offset_right = 392.0
 offset_bottom = 61.0
 theme_override_font_sizes/font_size = 30
 text = "250"
@@ -196,6 +200,7 @@ position = Vector2(731, 400)
 
 [node name="SunEnergyManager" type="Node" parent="."]
 script = ExtResource("5_khmhj")
+sunTotal = 100000
 
 [node name="SunTimer" type="Timer" parent="SunEnergyManager"]
 
