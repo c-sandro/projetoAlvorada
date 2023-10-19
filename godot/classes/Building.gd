@@ -11,14 +11,12 @@ func startBuilding(newCost, newSunGained, newTickTime):
 	sunGained = newSunGained
 	self.wait_time = newTickTime
 
-func buildingMark1():
-	self.wait_time /= 2
-
-func buildingMark2():
-	sunGained *= 2
-
-func buildingMark3():
-	self.wait_time /= 2
-
-func buildingMark4():
-	sunGained *= 2
+func checkMark():
+	if(quantity == 10):
+		self.wait_time /= 2
+	elif(quantity == 25):
+		sunGained *= 2
+	elif(quantity == 50):
+		self.wait_time /= 2
+	elif(quantity == 100):
+		sunGained *= 2
