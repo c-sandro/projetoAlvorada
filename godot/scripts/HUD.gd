@@ -22,6 +22,10 @@ func _on_sun_energy_manager_mouse_bought(newPrice, newSPT):
 func _on_sun_energy_manager_building_bought(building, newPrice):
 	if(building == 0):
 		$Buttons/WindPowerBuy/Price.text = str(newPrice)
+	elif(building == 1):
+		$Buttons/WaterPowerBuy/Price.text = str(newPrice)
+	elif(building == 2):
+		$Buttons/NuclearPowerBuy/Price.text = str(newPrice)
 
 func _on_sun_time_elapsed(dayTime):
 	$Time.text = str(dayTime) + ":00"

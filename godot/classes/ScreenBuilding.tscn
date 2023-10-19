@@ -28,18 +28,18 @@ anchor_left = -9.637
 anchor_top = -14.628
 anchor_right = 19.163
 anchor_bottom = 1.572
-offset_left = 441.48
+offset_left = 450.48
 offset_top = 545.12
-offset_right = -682.52
+offset_right = -673.52
 offset_bottom = -2.88
 mouse_filter = 2
 color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="HowFull" type="ColorRect" parent="ProgressBar"]
 layout_mode = 0
-offset_left = 58.0
+offset_left = 67.0
 offset_top = -38.0
-offset_right = 82.0
+offset_right = 91.0
 offset_bottom = 58.0
 rotation = 3.14159
 pivot_offset = Vector2(12, 48)
@@ -74,6 +74,7 @@ Tempo de tick:
 Quantidade: "
 
 [node name="GainPerTick" type="Label" parent="InfoWindow/Text"]
+layout_mode = 0
 offset_left = 116.0
 offset_right = 125.0
 offset_bottom = 25.0
@@ -81,6 +82,7 @@ theme_override_font_sizes/font_size = 15
 text = "0"
 
 [node name="TickTime" type="Label" parent="InfoWindow/Text"]
+layout_mode = 0
 offset_left = 111.0
 offset_top = 25.0
 offset_right = 120.0
@@ -90,6 +92,7 @@ text = "0
 "
 
 [node name="Quantity" type="Label" parent="InfoWindow/Text"]
+layout_mode = 0
 offset_left = 95.0
 offset_top = 50.0
 offset_right = 104.0
